@@ -59,11 +59,10 @@ class PanelApp(tk.Tk):
         panel.columnconfigure(1, weight=1)
         self._add_input(panel, 0, 'Ns celdas serie', 'ns', '36')
         self._add_input(panel, 1, 'Np paralelo', 'np_parallel', '1')
-        self._add_input(panel, 2, 'Voc referencia', 'voc_ref', '22.41', 'V')
-        self._add_input(panel, 3, 'Isc referencia', 'isc_ref', '9.67', 'A')
+        self._add_input(panel, 2, 'Voc', 'voc_ref', '22.41', 'V')
+        self._add_input(panel, 3, 'Isc', 'isc_ref', '9.67', 'A')
         self._add_input(panel, 4, 'KVoc', 'kvoc', '-0.08', 'V/°C')
         self._add_input(panel, 5, 'KIsc', 'kisc_percent', '0.1', '%/°C')
-        self._add_input(panel, 6, 'Factor idealidad A', 'diode_ideality', '2.0')
 
         buttons = ttk.Frame(left)
         buttons.pack(fill='x', pady=(0, 10))
@@ -112,7 +111,6 @@ class PanelApp(tk.Tk):
             'isc_ref': '9.67',
             'kvoc': '-0.08',
             'kisc_percent': '0.1',
-            'diode_ideality': '2.0',
         }
         for key, value in defaults.items():
             self.vars[key].set(value)
@@ -134,7 +132,7 @@ class PanelApp(tk.Tk):
             isc_ref=f('isc_ref'),
             kvoc=f('kvoc'),
             kisc_percent=f('kisc_percent'),
-            diode_ideality=f('diode_ideality'),
+            diode_ideality=2.0,
         )
 
     def simulate(self) -> None:

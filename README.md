@@ -30,7 +30,7 @@ Los valores por defecto son los visibles en el panel de LabVIEW:
 - Isc: `9.67 A`
 - KIsc: `0.1 %/°C`
 - KVoc: `-0.08 V/°C`
-- Factor de idealidad A: `2.0`
+- Factor de idealidad A: `2.0` fijo interno
 
 ## Ejecutar
 
